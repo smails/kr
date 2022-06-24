@@ -1,0 +1,74 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('Каталог проектов')
+  body.index
+    +header()
+    +b.content
+      +e.head
+      +e.inner.inner
+        +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+          each link, index in ['Главная', 'Продукция']
+            if link == 'Продукция'
+              +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.SPAN.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+            else
+              +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.A.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+        +e.box
+          +e.H1.title Каталог проектов
+          +b.work
+            +e.nav
+              +e.BUTTON.tab.active Дома
+              +e.BUTTON.tab Бани
+              +e.BUTTON.tab Беседки
+              +e.BUTTON.tab Заборы
+              +e.BUTTON.tab Туалеты
+            +e.box(style="display:block")
+              +e.slider.swiper-container
+                .swiper-wrapper
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                +e.swiper-btn_prev
+                +e.swiper-btn_next
+            +e.box
+              +e.slider.swiper-container
+                .swiper-wrapper
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                +e.swiper-btn_prev
+                +e.swiper-btn_next
+            +e.box
+            +e.box
+            +e.box
+    +stepwork()
+    +stepbuild()
+    +about()
+    +review()
+    +partners()
+    +footer()
+    include ../static/pug/_scripts

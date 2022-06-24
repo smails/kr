@@ -1,0 +1,18 @@
+mixin banner(state)
+  +b.banner
+    .swiper-container
+      .swiper-wrapper
+        +e.slide.swiper-slide
+          +e.IMG.pic(src='/images/slide3.png' alt='')
+          +e.P.title Выгодная доставка по Нижегородской области
+        +e.slide.swiper-slide
+          +e.IMG.pic(src='/images/slide2.png' alt='')
+          +e.P.title Выгодная доставка по Нижегородской области
+        +e.slide.swiper-slide
+          +e.IMG.pic(src='/images/slide1.png' alt='')
+          +e.P.title Возможность рассчитать стоимость дома on-line
+      .swiper-next
+    +e.check-list
+      +e.item Еженедельная отчетность
+      +e.item Собственное производство
+      +e.item Срок и смета по договору

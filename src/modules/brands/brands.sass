@@ -1,0 +1,55 @@
+.brands
+  padding: 18rem 0
+  background: $c2
+  +screen('max', 1280)
+    padding: 12rem 0
+  &__title
+    color: #fff
+    text-transform: uppercase
+    text-align: center
+    margin-bottom: 10rem
+    +screen('max', 1023)
+      margin-bottom: 7.5rem
+  &__inner
+    +screen('max', 575)
+      padding: 0
+  &__slider
+    position: relative
+    user-select: none
+    +screen('max', 1023)
+      padding: 0 5rem
+    +screen('max', 575)
+      padding: 0
+  &__slide
+    +screen('max', 575)
+      max-width: 108px
+  &__btn
+    width: 15px
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    cursor: pointer
+    +screen('max', 575)
+      display: none
+    path
+      fill: #fff
+      opacity: 0.5
+      transition: .5s ease
+    &:hover
+      path
+        opacity: 1
+    &_prev
+      left: -4rem
+      +screen('max', 1500)
+        left: -3rem
+      +screen('max', 1023)
+        left: 0
+    &_next
+      right: -4rem
+      +screen('max', 1500)
+        right: -3rem
+      +screen('max', 1023)
+        right: 0
+  &__pic
+    +screen('max', 1280)
+      width: 100%

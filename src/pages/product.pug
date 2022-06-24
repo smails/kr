@@ -1,0 +1,178 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('Каталог проектов')
+  body.index
+    +header()
+    +b.content
+      +e.head
+      +e.inner.inner
+        +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+          each link, index in ['Главная', 'Продукция']
+            if link == 'Продукция'
+              +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.SPAN.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+            else
+              +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.A.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+        +e.box
+          +e.H1.title Дом из рубленного бревна 152 м2 (вторая строка названия товара)
+          +b.product
+            +e.head
+              +e.info
+                +e.list
+                  ul
+                    li Количество этажей - 
+                      strong 2`
+                    li Общая площадь - 
+                      strong 158.00 м2
+                    li Жилая площадь - 
+                      strong 123.80 м2
+                    li Высота дома - 
+                      strong 8.70 м
+                    li Высота потолка - 
+                      strong 2.60 м
+                    li Угол наклона кровли - 
+                      strong 45 °
+                +e.char
+                  +e.char-item
+                    +e.char-head
+                      +e.P.char-numb 4
+                      +e.IMG.char-pic(src='/icon/icon-room.png' alt='')
+                    +e.P.char-txt комнаты
+                  +e.char-item
+                    +e.char-head
+                      +e.P.char-numb 1
+                      +e.IMG.char-pic(src='/icon/icon-badroom.png' alt='')
+                    +e.P.char-txt санузел
+                  +e.char-item
+                    +e.char-head
+                      +e.P.char-numb 1
+                      +e.IMG.char-pic(src='/icon/icon-balcon.png' alt='')
+                    +e.P.char-txt балкон
+                  +e.char-item
+                    +e.char-head
+                      +e.P.char-numb 1
+                      +e.IMG.char-pic(src='/icon/icon-terrs.png' alt='')
+                    +e.P.char-txt терасса
+                +e.nav-slider
+                  +e.nav-btn.active
+                    +e.IMG.thumb(src='/images/product.png' alt='')
+                  +e.nav-btn
+                    +e.IMG.thumb(src='/images/product.png' alt='')
+                  +e.nav-btn
+                    +e.IMG.thumb(src='/images/product.png' alt='')
+                  +e.nav-btn
+                    +e.IMG.thumb(src='/images/product.png' alt='')
+                  +e.nav-btn
+                    +e.IMG.thumb(src='/images/product.png' alt='')
+                  +e.nav-btn
+                    +e.IMG.thumb(src='/images/product.png' alt='')
+              +e.slider.swiper-container
+                .swiper-wrapper
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                  +e.slide.swiper-slide
+                    +e.IMG.pic(src='/images/product.png' alt='')
+                +e.swiper-btn_prev
+                +e.swiper-btn_next
+            +e.middle
+              +e.price
+                +e.P.label Стоимость от:
+                +e.P.cost 1 068 008 руб.
+              +e.bnts
+                +e.A.btn_outline Получить консультацию
+                +e.A.btn Скачать смету
+            +e.bottom
+              +e.tabs
+                +e.tab.active Описание
+                +e.tab Характеристики
+              +e.box(display="block")
+                +e.content
+              +e.box
+                +e.content
+    +b.product-sale
+      +e.inner.inner
+        +e.item
+          +e.IMG.pic(src='/images/vnt-1.png' alt='')
+          +e.content
+            +e.P.title Аренда бытовки
+              br
+              | в подарок
+            +e.A.btn Узнать больше о подарках
+        +e.item
+          +e.IMG.pic(src='/images/vnt-2.png' alt='')
+          +e.content
+            +e.P.title Кухня в подарок
+            +e.P.text Мы позаботились о самом
+              br
+              | важном месте в вашем доме
+            +e.A.btn Узнать больше о подарках
+        +e.item
+          +e.IMG.pic(src='/images/vnt-3.png' alt='')
+          +e.content
+            +e.P.title Доставка на объект
+              br
+              | в подарок
+            +e.A.btn Узнать больше о подарках
+    +b.product-vnt
+      +e.inner.inner
+        +e.item
+          +e.picture
+            +e.IMG.pic(src='/icon/icon-skills-1.png' alt='')
+          +e.P.caption Еженедельная отчетность
+        +e.item
+          +e.picture
+            +e.IMG.pic(src='/icon/icon-skills-2.png' alt='')
+          +e.P.caption Собственное производство
+        +e.item
+          +e.picture
+            +e.IMG.pic(src='/icon/icon-skills-3.png' alt='')
+          +e.P.caption Срок и смета по договору
+    +b.product-call
+      +e.inner.inner
+        +e.box
+          +e.content
+            +e.P.sign Хотите другую планировку?
+            +e.P.title Мы бесплатно изменим её,
+            +e.P.sign согласно Вашим пожеланиям
+            +e.list
+              +e.item
+                b Передвинем 
+                | стены
+              +e.item
+                b Поменяем 
+                | высоту окон
+              +e.item
+                b Сменим 
+                | дверь
+              +e.item
+                b Добавим 
+                | больше комнат
+              +e.item
+                b Сделаем 
+                | веранду
+              +e.item
+                b И многое другое
+            +e.cnt
+              +e.P.txt Получите подробную бесплатную консультацию от нашего технического директора
+              +e.A.btn Обсудить планировку
+    +stepwork()
+    +stepbuild()
+    +about()
+    +review()
+    +partners()
+    +footer()
+    include ../static/pug/_scripts

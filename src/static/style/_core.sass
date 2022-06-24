@@ -1,0 +1,680 @@
+*::-webkit-scrollbar
+  width: 8px
+  height: 3px
+  background: #071320
+*::-webkit-scrollbar-track
+  background-color: transparent
+*::-webkit-scrollbar-track-piece
+  background-color: transparent
+*::-webkit-scrollbar-thumb
+  height: 50px
+  background-color: rgba(255, 255, 255, 0.1)
+  border-radius: 3px
+*::-webkit-scrollbar-corner
+  background-color: #fff
+*::-webkit-resizer
+  background-color: rgba(255, 255, 255, 0.1)
+html
+  font-size: 10px
+  +screen('max', 575)
+    font-size: 6px
+body
+  font-size: 16px
+  font-weight: 400
+  line-height: 1
+  font-family: $ff2
+  color: $c1
+  scroll-behavior: smooth
+  // +screen('max', 575)
+  //   font-size: 14px
+
+.inner
+  max-width: 1160px
+  width: 100%
+  margin: 0 auto
+  box-sizing: border-box
+  +screen('max', 1160)
+    padding: 0 3rem
+  +screen('max', 1023)
+    padding: 0 2rem
+  +screen('max', 575)
+    padding: 0 1.334rem
+.section
+  padding: 7rem 0
+.title
+  text-align: center
+  +fs(36px)
+  font-weight: 700
+  color: $c2
+  margin-bottom: 7rem
+
+.btn
+  border-radius: 19.5px
+  border: solid 2px $c4
+  padding: 1rem 2rem
+  +fs(16px)
+  color: #c9c4ad
+  display: inline-block
+  box-sizing: border-box
+  background: none
+  line-height: 1
+  &:hover
+    border-color: $c3
+    background-color: $c3
+    color: #fff
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 99999
+  background: rgba(0, 0, 0, 0.6)
+  display: none
+
+.breadcrumb
+  padding-bottom: 3rem
+  border-bottom: 1px solid #ccc
+  position: relative
+  z-index: 9
+  &__text
+    +fs(12px)
+    color: $c7
+  &__link
+    margin-right: .5rem
+    &::after
+      content: '/'
+      +fs(12px)
+      color: $c7
+
+.content
+  padding-top: 30rem
+  background-color: $c4
+  position: relative
+  overflow: hidden
+  &::before, &::after
+    content: ''
+    width: 300px
+    height: 100%
+    position: absolute
+    top: 0
+    background-repeat: repeat-y
+    background-position: center
+    display: block
+    mix-blend-mode: color-burn
+  &:before
+    background-image: url(../images/bg-left.png)
+    left: 0
+  &:after
+    background-image: url(../images/bg-right.png)
+    right: 0
+  &__head
+    background-image: url(../images/head.png)
+    background-position: top center
+    background-repeat: no-repeat
+    height: 400px
+    width: 100%
+    position: absolute
+    z-index: 2
+    top: 0
+  &__title
+    +fs(60px)
+    line-height: 1.1
+    margin: 3rem 0 4rem
+  &__text
+    line-height: 1.5
+    h2,h3,h4
+      text-align: center
+      font-weight: 700
+      color: $c2
+      margin-bottom: 2rem
+    p
+      margin-bottom: 2rem
+
+.products
+  padding-bottom: 10rem
+  &__nav
+    display: flex
+    margin-bottom: 2.5rem
+    flex-wrap: wrap
+  &__tab
+    padding: 8px 16px
+    border: 2px solid #393a3d
+    border-radius: 50px
+    transition: all .3s ease
+    margin-bottom: 1rem
+    +fs(16px)
+    margin-right: 2rem
+    font-family: $ff2
+    &:hover, &.active
+      background: $c3
+      border-color: $c3
+      color: #fff
+  &__list
+    display: grid
+    grid-template-columns: repeat(3, 31.5%)
+    grid-gap: 30px
+    justify-content: space-between
+  &__cat
+    border: 6px solid rgba(255,255,255,0.6)
+    box-sizing: border-box
+    transition: .5s ease
+    position: relative
+    height: 285px
+    &:hover
+      box-shadow: 0px 15px 50px 0px rgb(54 38 9 / 20%)
+  &__caption
+    position: absolute
+    bottom: 0
+    width: 100%
+    padding: 20px
+    background: rgba(#232529, .7)
+    box-sizing: border-box
+    +fs(25px)
+    color: #fff
+    text-shadow: 0 0 10px rgba(5, 0, 2, 0.6)
+    font-weight: 700
+  &__pic
+    width: 100%
+    height: 100%
+    vertical-align: middle
+    object-fit: cover
+  &__head
+    display: flex
+    align-items: center
+    margin-bottom: 4rem
+  &__back
+    width: 30px
+    height: 16px
+    background-image: url(../icon/icon-arrow-back.png)
+    background-repeat: no-repeat
+    background-size: contain
+    transition: .5s ease
+  &__type
+    padding: 8px 16px
+    background: $c3
+    margin-left: 2rem
+    color: #fff
+    border-radius: 50px
+    transition: all .3s ease
+    +fs(16px)
+    margin-right: 2rem
+    font-family: $ff2
+  &__filter
+    padding: 4rem
+    background: #fff
+    border: 6px solid rgba($c4,0.6)
+    margin-bottom: 4rem
+  &__row
+    display: flex
+    margin-bottom: 2rem
+    align-items: center
+    &:last-of-type
+      margin-bottom: 0
+  &__name
+    font-weight: 700
+    width: 90px
+    margin-right: 3rem
+  &__check
+    position: relative
+    padding: .6rem .6rem .6rem 4rem
+    cursor: pointer
+    display: inline-block
+    user-select: none
+    margin-right: 2rem
+  &__hidden
+    display: none
+    &:checked + span > i
+      background: $c3
+    &:checked + span > i:before
+      left: 18px
+  &__txt
+    i
+      position: absolute
+      top: 50%
+      margin-top: -10px
+      left: 0
+      width: 36px
+      height: 20px
+      border-radius: 10px
+      background: #edede8
+      transition: .2s
+      display: inline-block
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        margin-top: -8px
+        left: 2px
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background: #FFF
+        box-shadow: 0 2px 5px rgb(0 0 0 / 30%)
+        transition: .2s
+  &__item
+    border: 6px solid rgba(255,255,255,0.6)
+    box-sizing: border-box
+    transition: .5s ease
+    &:hover
+      box-shadow: 0px 15px 50px 0px rgb(54 38 9 / 20%)
+  &__picture
+    position: relative
+    height: 285px
+  &__state
+    position: absolute
+    background-color: #e91e26
+    width: 50px
+    height: 50px
+    border-radius: 100%
+    font-weight: 700
+    text-transform: uppercase
+    color: #fff
+    text-align: center
+    display: flex
+    justify-content: center
+    align-items: center
+    top: -10px
+    left: -10px
+  &__info
+    background: #fff
+  &__square
+    padding: 20px
+    border-bottom: 1px solid $c4
+  &__bottom
+    display: flex
+    justify-content: space-between
+    padding: 10px 10px 10px 20px
+    align-items: center
+  &__price
+    font-weight: 700
+    color: $c3
+    +fs(25px)
+  &__content
+    margin-top: 4rem
+    line-height: 1.5
+    h2
+      text-align: center
+      +fs(36px)
+      font-weight: 700
+      color: $c2
+      margin-bottom: 2rem
+    p
+      margin-bottom: 2rem
+    table
+      width: 100%
+    table b
+      font-weight: bold
+    table td
+      width: 25% !important
+      border: 1px solid #ccc
+      vertical-align: middle
+      padding: 8px
+    table td p
+      margin-bottom: 0
+    h2
+      +fs(26px)
+      margin-bottom: 20px
+      margin-top: 26px
+
+.product
+  padding-bottom: 10rem
+  &__head
+    display: flex
+    justify-content: space-between
+  &__info
+    width: 25%
+    max-width: 260px
+    margin-right: 4rem
+    flex-shrink: 0
+  &__char
+    display: grid
+    grid-template-columns: repeat(2, 47%)
+    grid-gap: 20px
+    justify-content: space-between
+    margin: 3.5rem 0
+  &__char-head
+    max-width: 80%
+    display: flex
+    align-items: flex-end
+  &__char-numb
+    +fs(27px)
+    font-weight: 700
+    width: 30%
+  &__char-txt
+    font-weight: 700
+    margin-top: 0.5rem
+  &__char-pic
+    vertical-align: middle
+  &__thumb
+    width: 100%
+    vertical-align: middle
+  &__nav-slider
+    display: grid
+    grid-template-columns: repeat(2, 47%)
+    grid-gap: 16px
+    justify-content: space-between
+  &__nav-btn
+    transition: .5s ease
+    &.active
+      border: 3px solid $c3
+      box-sizing: border-box
+  &__pic
+    width: 100%
+  &__swiper-btn
+    width: 16px
+    height: 28px
+    background-image: url(../icon/icon-arrow-white.png)
+    background-repeat: no-repeat
+    background-position: center
+    position: absolute
+    z-index: 99
+    cursor: pointer
+    top: 50%
+    transform: translateY(-50%)
+    opacity: 0.5
+    &_next
+      right: 20px
+    &_prev
+      left: 20px
+      transform: rotate(180deg)
+    &:hover
+      opacity: 1
+  &__middle
+    background-color: #fff
+    margin: 4rem 0
+    padding: 3rem
+    display: flex
+    justify-content: space-between
+    border: 6px solid rgba($c4, .6)
+  &__label
+    +fs(14px)
+    color: #666
+    margin-bottom: .5rem
+  &__cost
+    +fs(36px)
+    font-weight: 700
+  &__btns
+    display: flex
+  &__btn
+    border-radius: 3px
+    background-color: $c3
+    padding: 0 4rem
+    text-align: center
+    color: #fff
+    +fs(14px)
+    font-weight: 700
+    padding: 2rem
+    display: inline-block
+    width: 250px
+    cursor: pointer
+    &_outline
+      background: transparent
+      border: 2px solid $c3
+      color: $c3
+      margin-right: 3rem
+      box-sizing: border-box
+      padding: 1.8rem 2rem
+  &__bottom
+    margin: 4rem 0
+    padding: 3rem
+    border: 6px solid rgba($c4, .6)
+    background: #fff
+  &__tabs
+    display: flex
+    margin-bottom: 3rem
+  &__tab
+    padding: 8px 16px
+    border-radius: 50px
+    border: 2px solid #edede8
+    cursor: pointer
+    font-weight: bold
+    +fs(14px)
+    user-select: none
+    margin-right: 2rem
+    &.active
+      border: 2px solid $c3
+      color: $c3
+  &__content
+    table
+      width: 100%
+    table b
+      font-weight: bold
+    table td
+      width: 25% !important
+      border: 1px solid #ccc
+      vertical-align: middle
+      padding: 8px
+    table td p
+      margin-bottom: 0
+    table.table-header
+      background: $c3
+      color: #fff
+    table.table-header td
+      padding: 16px 8px
+      border-bottom: 0
+      border-top: 0
+    h2
+      +fs(26px)
+      margin-bottom: 20px
+      margin-top: 26px
+
+.product-sale
+  margin: 6rem 0
+  &__inner
+    display: grid
+    grid-template-columns: repeat(3, 30%)
+    justify-content: space-between
+  &__item
+    position: relative
+  &__pic
+    width: 100%
+    vertical-align: middle
+  &__content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.55)
+    text-align: center
+  &__title
+    +fs(18px)
+    font-weight: 700
+    color: #fff
+    text-transform: uppercase
+    margin-top: 5rem
+    line-height: 1.3
+  &__text
+    color: #fff
+    line-height: 1.4
+    margin-top: 1.5rem
+  &__btn
+    border-radius: 3px
+    border: solid 2px #fff
+    padding: 1.5rem
+    +fs(14px)
+    font-weight: 700
+    color: #fff
+    position: absolute
+    bottom: 15px
+    left: 0
+    right: 0
+    margin: 0 auto
+    width: 90%
+    max-width: 230px
+
+.product-vnt
+  margin: 6rem 0
+  &__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__item
+    display: flex
+    align-items: center
+  &__caption
+    +fs(18px)
+    font-weight: 700
+  &__picture
+    width: 85px
+    height: 85px
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 4px solid #edede8
+    margin: 0 auto
+    margin-right: 1.5rem
+
+.product-call
+  &__box
+    background-image: url(../images/call.png)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    color: #fff
+  &__content
+    display: flex
+    box-sizing: border-box
+    padding: 40px 90px
+    align-items: flex-end
+    background: rgba(#000, .6)
+    flex-flow: column
+    position: relative
+    &:before
+      content: ''
+      width: 60%
+      max-width: 470px
+      height: 300px
+      background-image: url(../images/call-room.png)
+      position: absolute
+      left: 0
+      top: 0
+      background-size: contain
+      background-repeat: no-repeat
+  &__sign
+    text-align: right
+    +fs(25px)
+    font-family: $ff1
+    font-style: italic
+  &__title
+    +fs(36px)
+    font-weight: 700
+    margin: 0.5rem 0
+  &__list
+    column-count: 2
+    margin: 5rem 0 4rem
+  &__item
+    +fs(18px)
+    color: #fff
+    text-shadow: 0 0 10px rgba(5, 0, 2, 0.6)
+    background-image: url(../icon/icon-check-green.png)
+    background-position: left center
+    background-repeat: no-repeat
+    background-size: contain
+    padding: 3px 0 3px 32px
+    margin-bottom: 1rem
+  &__cnt
+    display: flex
+    justify-content: flex-end
+    align-items: center
+  &__btn
+    border-radius: 3px
+    background-color: $c3
+    width: 385px
+    text-align: center
+    color: #fff
+    +fs(20px)
+    font-weight: 700
+    padding: 2rem
+    cursor: pointer
+  &__txt
+    +fs(18px)
+    line-height: 1.3
+    text-align: right
+    font-weight: 700
+    text-transform: uppercase
+    margin-right: 4rem
+
+.news
+  display: grid
+  grid-template-columns: repeat(3, 32%)
+  justify-content: space-between
+  margin-bottom: 6rem
+  grid-gap: 15px
+  +screen('max', 1023)
+    grid-auto-columns: repeat(2, 49%)
+  +screen('max', 575)
+    display: block
+  &__item
+    border: 6px solid rgba(255,255,255,0.6)
+    box-sizing: border-box
+    transition: .5s ease
+    background: #fff
+    &:hover
+      box-shadow: 0px 15px 50px 0px rgb(54 38 9 / 20%)
+  &__pic
+    height: 300px
+    width: 100%
+    vertical-align: middle
+    object-fit: cover
+  &__content
+    padding: 3rem 2rem 2rem
+    display: block
+  &__intro
+    +fs(18px)
+    display: block
+    margin-bottom: 2rem
+    line-height: 1.3
+  &__title
+    +fs(22px)
+    font-weight: 700
+    margin-bottom: 2rem
+
+.work
+  margin-bottom: 6rem
+  &__nav
+    display: flex
+    margin-bottom: 2.5rem
+    flex-wrap: wrap
+    justify-content: center
+  &__tab
+    padding: 8px 16px
+    border: 2px solid #393a3d
+    border-radius: 50px
+    transition: all .3s ease
+    margin-bottom: 1rem
+    +fs(16px)
+    margin-right: 2rem
+    font-family: $ff2
+    &:hover, &.active
+      background: $c3
+      border-color: $c3
+      color: #fff
+  &__box
+    display: none
+  &__pic
+    width: 100%
+    height: 650px
+    object-fit: cover
+    vertical-align: middle
+  &__swiper-btn
+    width: 16px
+    height: 28px
+    background-image: url(../icon/icon-arrow-white.png)
+    background-repeat: no-repeat
+    background-position: center
+    position: absolute
+    z-index: 99
+    cursor: pointer
+    top: 50%
+    transform: translateY(-50%)
+    opacity: 0.5
+    &_next
+      right: 20px
+    &_prev
+      left: 20px
+      transform: rotate(180deg)
+    &:hover
+      opacity: 1

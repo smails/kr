@@ -1,0 +1,35 @@
+mixin footer(state)
+  +b.FOOTER.footer
+    +e.inner.inner
+      +e.col
+        +e.IMG.pic(src='/icon/icon-logo-footer.png' alt='')
+        +e.sign
+          p Строительная компания «Карасев Строй НН»
+          p АвтоМОЛЛ Нижний Новгород
+          p Суздальская 66, оф. 8
+        +e.A.phone(tel="tel:8 (831) 415-15-68") 8 (831) 415-15-68
+        +e.A.mail(href="mailto:karasev4151568@yandex.ru") karasev4151568@yandex.ru
+      +e.col
+        +e.UL.list
+          +e.LI.item
+            +e.A.link(href="#") Главная
+          +e.LI.item
+            +e.A.link(href="#") О компании
+          +e.LI.item
+            +e.A.link(href="#") Акции
+          +e.LI.item
+            +e.A.link(href="#") Отзывы
+          +e.LI.item
+            +e.A.link(href="#") Земельные участки
+          +e.LI.item
+            +e.A.link(href="#") Наши проекты
+          +e.LI.item
+            +e.A.link(href="#") Полезные статьи
+          +e.LI.item
+            +e.A.link(href="#") Контакты
+      +e.col
+        +e.social
+          +e.A.ln_viber(href="#")
+          +e.A.ln_tg(href="#")
+          +e.A.ln_whats(href="#")
+        +e.A.map(href="#") Карта сайта

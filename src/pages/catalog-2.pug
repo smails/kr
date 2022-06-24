@@ -1,0 +1,126 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('Каталог проектов')
+  body.index
+    +header()
+    +b.content
+      +e.head
+      +e.inner.inner
+        +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+          each link, index in ['Главная', 'Продукция']
+            if link == 'Продукция'
+              +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.SPAN.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+            else
+              +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.A.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+        +e.box
+          +e.H1.title Каталог проектов
+          +b.products
+            +e.head
+              +e.A.back(href="#")
+              +e.type Бани из бруса
+            +e.FORM.filter
+              +e.row
+                +e.name Стоимость:
+                +e.check-list
+                  +e.LABEL.check
+                    +e.INPUT.hidden(type="checkbox" checked)
+                    +e.SPAN.txt
+                      i
+                      | До 1 млн
+                  +e.LABEL.check
+                    +e.INPUT.hidden(type="checkbox")
+                    +e.SPAN.txt
+                      i
+                      | До 1 млн
+              +e.row
+                +e.name Площадь:
+                +e.check-list
+                  +e.LABEL.check
+                    +e.INPUT.hidden(type="checkbox")
+                    +e.SPAN.txt
+                      i
+                      | До 1 млн
+            +e.list
+              +e.item
+                +e.picture
+                  +e.state хит
+                  +e.IMG.pic(src='/images/hit-1.png' alt='')
+                  +e.P.caption Каркасная баня 2х4
+                +e.info
+                  +e.P.square Площадь:
+                    b 8 м2
+                  +e.bottom
+                    +e.P.price 192 000 Р
+                    +e.A.more.btn(href="#") подробнее
+              +e.item
+                +e.picture
+                  +e.state хит
+                  +e.IMG.pic(src='/images/hit-2.png' alt='')
+                  +e.P.caption Каркасная баня 2х4
+                +e.info
+                  +e.P.square Площадь:
+                    b 8 м2
+                  +e.bottom
+                    +e.P.price 192 000 Р
+                    +e.A.more.btn(href="#") подробнее
+              +e.item
+                +e.picture
+                  +e.state хит
+                  +e.IMG.pic(src='/images/hit-1.png' alt='')
+                  +e.P.caption Каркасная баня 2х4
+                +e.info
+                  +e.P.square Площадь:
+                    b 8 м2
+                  +e.bottom
+                    +e.P.price 192 000 Р
+                    +e.A.more.btn(href="#") подробнее
+              +e.item
+                +e.picture
+                  +e.state хит
+                  +e.IMG.pic(src='/images/hit-2.png' alt='')
+                  +e.P.caption Каркасная баня 2х4
+                +e.info
+                  +e.P.square Площадь:
+                    b 8 м2
+                  +e.bottom
+                    +e.P.price 192 000 Р
+                    +e.A.more.btn(href="#") подробнее
+              +e.item
+                +e.picture
+                  +e.state хит
+                  +e.IMG.pic(src='/images/hit-1.png' alt='')
+                  +e.P.caption Каркасная баня 2х4
+                +e.info
+                  +e.P.square Площадь:
+                    b 8 м2
+                  +e.bottom
+                    +e.P.price 192 000 Р
+                    +e.A.more.btn(href="#") подробнее
+              +e.item
+                +e.picture
+                  +e.state хит
+                  +e.IMG.pic(src='/images/hit-2.png' alt='')
+                  +e.P.caption Каркасная баня 2х4
+                +e.info
+                  +e.P.square Площадь:
+                    b 8 м2
+                  +e.bottom
+                    +e.P.price 192 000 Р
+                    +e.A.more.btn(href="#") подробнее
+            +e.content
+              h2 Заголокок
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, doloribus repellat! Necessitatibus, quis! Sed dolorem fugiat nesciunt iure, aliquam quisquam harum, maxime officiis autem reiciendis fugit ut reprehenderit hic? Iusto.Rerum dolorum dicta vel reiciendis? Voluptates tempora officiis commodi laudantium inventore pariatur quia odit quidem porro et maiores quos eveniet harum incidunt, distinctio totam, iure minus consectetur voluptate libero repellendus.Modi, earum fugit quibusdam voluptatum animi laboriosam. Eum, rem! Architecto pariatur totam fugiat nulla. Magni suscipit libero quia voluptates reprehenderit dolorum, soluta excepturi blanditiis voluptatum aperiam temporibus totam quis laborum!Sapiente rem, voluptates assumenda veniam unde nulla, ratione odit libero fuga laudantium nostrum! Cupiditate deserunt sit, magni eos architecto doloribus facere quasi error eaque dolore fuga distinctio, quo reprehenderit tempora?Nobis hic nisi molestiae vero molestias ipsum quas excepturi sit pariatur aliquam vel aspernatur, consectetur quidem consequatur est provident nemo voluptas repellendus recusandae? Ipsam, temporibus earum. Vitae quasi dolorem esse!Aperiam ipsum quae, totam vitae ipsa laudantium nesciunt nulla. Nemo minima nulla alias laudantium possimus cupiditate dolorum asperiores! Odio nostrum deleniti dolorem cupiditate error obcaecati perferendis aperiam dignissimos quibusdam doloremque?Tenetur atque suscipit praesentium beatae maiores nesciunt ea deserunt laboriosam non, culpa repudiandae, impedit consequuntur ducimus inventore sint nihil velit cupiditate laborum quo quia temporibus nam porro assumenda quae! Soluta.Tenetur nemo magni iure optio nesciunt hic sunt, voluptates similique quo animi labore esse, necessitatibus cupiditate repellendus consequatur tempora eaque sint? Eius ratione commodi, explicabo earum quam sit omnis assumenda.Aliquam, veritatis sunt! Asperiores similique ipsa iusto doloremque mollitia necessitatibus repudiandae ad explicabo voluptas possimus facere alias deserunt tempore quas, assumenda totam expedita autem quidem debitis molestias quis quae? Assumenda.Aliquid quo rerum earum ea debitis adipisci temporibus facilis ratione est possimus. Exercitationem impedit perferendis animi, excepturi repellat provident. Dignissimos laboriosam nisi officia maxime vitae soluta sint qui officiis excepturi.Quas autem excepturi praesentium dolor! Consectetur dolores error, esse recusandae quibusdam rem aliquid ratione saepe iure quidem eaque corrupti, voluptate est numquam quod reiciendis, illum natus tempore quaerat? Amet, accusamus!Magni adipisci ullam illum rerum sint, iste, enim porro saepe facilis hic officiis nemo labore soluta, vitae maxime nisi eum commodi ab quos eos natus. Tempora saepe quos tempore sunt.Consectetur sed sequi saepe voluptatem dolor velit, atque blanditiis, natus rerum quaerat fuga eum! Quisquam ea alias, tempore tempora natus saepe consectetur dolore impedit dolorem voluptatibus possimus at culpa similique.Aspernatur unde distinctio quo, qui nostrum non perspiciatis maxime rem, repellendus quam delectus repudiandae praesentium ratione voluptatem animi dolorem ab nam. Cumque repellat, perferendis unde corrupti odio corporis accusamus fugiat.Quasi, rerum obcaecati corrupti porro explicabo non harum magnam est animi voluptates, repudiandae quos fugiat, labore sequi eos quaerat ipsum reprehenderit error laudantium maxime consequuntur dicta. Ipsam laborum similique odit.Voluptate quia similique deserunt perferendis cupiditate corrupti ipsa fuga commodi laborum neque, numquam sequi magni? Et aperiam necessitatibus fugit cumque, eveniet mollitia perferendis porro autem dolore suscipit facilis molestiae optio.Dolore debitis voluptates harum deserunt consequuntur. Blanditiis sit minus quibusdam dolores voluptatum! Doloremque, quod animi. Ullam ab, obcaecati nemo facere minima animi sunt ratione. Excepturi exercitationem et veritatis sapiente obcaecati.Deserunt vel cupiditate harum inventore vitae a ipsum ea quo? Sequi, nam quibusdam quaerat iure laborum aspernatur voluptates quae nobis, dolor quasi dicta ea eum. In eaque dolorum veritatis ipsum.Laborum, qui? Nisi beatae architecto ratione quis quia expedita, nemo doloremque soluta aspernatur perspiciatis fugit neque sint ut laboriosam excepturi? Repudiandae, fugiat repellendus optio autem aperiam nam iusto natus laborum?Non voluptatibus cumque modi nisi? Maxime id quaerat iure quibusdam vero adipisci illo quia ratione commodi, nemo cumque consequuntur sapiente rem, velit voluptates corrupti delectus debitis, consequatur dolores eaque aliquam.
+    +stepwork()
+    +stepbuild()
+    +about()
+    +review()
+    +partners()
+    +footer()
+    include ../static/pug/_scripts

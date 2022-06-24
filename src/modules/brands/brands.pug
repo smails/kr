@@ -1,0 +1,26 @@
+mixin brands(vars)
+  +b.brands
+    +e.inner.inner
+      +e.H2.title Партнеры компании 
+      +e.slider
+        .swiper-container
+          .swiper-wrapper
+            +e.slide.swiper-slide
+              +e.IMG.pic(src='/icon/icon-brands-1.svg' alt='')
+            +e.slide.swiper-slide
+              +e.IMG.pic(src='/icon/icon-brands-2.svg' alt='')
+            +e.slide.swiper-slide
+              +e.IMG.pic(src='/icon/icon-brands-3.svg' alt='')
+            +e.slide.swiper-slide
+              +e.IMG.pic(src='/icon/icon-brands-1.svg' alt='')
+            +e.slide.swiper-slide
+              +e.IMG.pic(src='/icon/icon-brands-2.svg' alt='')
+            +e.slide.swiper-slide
+              +e.IMG.pic(src='/icon/icon-brands-3.svg' alt='')
+        +e.btn_prev
+          svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 24')
+            path(d='M14.12 21.2 12 23.3.69 12 2.8 9.88 12 .68l2.12 2.13L4.92 12z')
+        +e.btn_next
+          svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 24')
+            path(d='M3 23.31.88 21.2l9.19-9.2-9.2-9.18L3 .69 14.3 12z' )
+

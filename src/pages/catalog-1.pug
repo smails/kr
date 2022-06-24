@@ -1,0 +1,62 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('Каталог проектов')
+  body.index
+    +header()
+    +b.content
+      +e.head
+      +e.inner.inner
+        +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+          each link, index in ['Главная', 'Продукция']
+            if link == 'Продукция'
+              +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.SPAN.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+            else
+              +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.A.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+        +e.box
+          +e.H1.title Каталог проектов
+          +b.products
+            +e.nav
+              +e.BUTTON.tab Дома
+              +e.BUTTON.tab Бани
+              +e.BUTTON.tab Беседки
+              +e.BUTTON.tab Заборы
+              +e.BUTTON.tab Туалеты
+            +e.list
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+              +e.A.cat
+                +e.IMG.pic(src='/images/hit-1.png' alt='')
+                +e.P.caption Дoма из мини-бруса
+    +stepwork()
+    +stepbuild()
+    +about()
+    +review()
+    +partners()
+    +footer()
+    include ../static/pug/_scripts

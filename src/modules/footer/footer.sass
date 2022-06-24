@@ -1,0 +1,72 @@
+.footer
+  padding: 6rem 0
+  background: $c6
+  &__inner
+    position: relative
+    justify-content: space-between
+    display: flex
+    &::before
+      content: 'Проектируем и строим уютные дома для счастливой жизни'
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      display: block
+      width: 100%
+      text-align: center
+      +fs(20px)
+      color: #fff
+      font-family: $ff1
+      opacity: 0.8
+      font-style: italic
+  &__social
+    display: flex
+    margin-top: 8.5rem
+  &__ln
+    width: 55px
+    height: 55px
+    border-radius: 100%
+    margin-left: 1rem
+    background-repeat: no-repeat
+    background-position: center
+    &_viber
+      background-color: #7f40bd
+      background-image: url(../icon/icon-viber.png)
+    &_tg
+      background-color: #039be5
+      background-image: url(../icon/icon-tg.png)
+    &_whats
+      background-color: #00a53d
+      background-image: url(../icon/icon-whats.png)
+  &__phone
+    +fs(28px)
+    color: #fff
+    font-weight: 700
+    margin-bottom: 2rem
+    display: block
+    line-height: 1
+  &__mail
+    +fs(15px)
+    color: #fff
+  &__sign
+    +fs(15px)
+    line-height: 1.2
+    color: #fff
+    margin: 2rem 0
+  &__list
+    column-count: 2
+    margin-top: 8.5rem
+  &__link
+    +fs(17px)
+    font-weight: 500
+    color: #fff
+    display: inline-block
+    border-bottom: 1px solid rgba(#fff, .6)
+    padding-bottom: 0.1rem
+  &__map
+    width: 100%
+    display: block
+    margin-top: 5rem
+    +fs(15px)
+    color: #8c8d8d
+    text-align: right

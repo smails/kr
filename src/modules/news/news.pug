@@ -1,0 +1,25 @@
+mixin news(state)
+  if state == 'index'
+    +b.news-index
+      +e.inner.inner
+        +e.H2.title Новости 
+          span компании
+        +e.tabs
+          +e.pictures
+            +e.IMG.pic.active(src='/images/news-1.jpg' alt='')
+            +e.IMG.pic(src='/images/news-1.jpg' alt='')
+            +e.IMG.pic(src='/images/news-1.jpg' alt='')
+            +e.IMG.pic(src='/images/news-1.jpg' alt='')
+          +e.content
+            +e.line.active
+              +e.P.date 01/05/2021
+              +e.P.text Индоссамент доказывает уголовный обычай делового, хотя законодательством может быть установлено иное. 
+            +e.line
+              +e.P.date 01/05/2021
+              +e.P.text Умножение двух векторов (скалярное) необходимо и достаточно.
+            +e.line
+              +e.P.date 01/05/2021
+              +e.P.text Нечетная функция осмысленно обуславливает убывающий Наибольший Общий Делитель (НОД).
+            +e.line
+              +e.P.date 01/05/2021
+              +e.P.text Функция многих переменных притягивает разрыв функции. 

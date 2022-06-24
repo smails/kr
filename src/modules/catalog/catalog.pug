@@ -1,0 +1,21 @@
+mixin catalog(vars)
+  +b.catalog.section
+    +e.inner.inner
+      +e.H2.title.title Каталог проектов
+      +e.list
+        +e.A.item_full(href="#")
+          +e.IMG.pic(src='/images/cat-1.png' alt='')
+          +e.caption Дома
+        +e.A.item(href="#")
+          +e.IMG.pic(src='/images/cat-2.png' alt='')
+          +e.caption Бани
+        +e.A.item(href="#")
+          +e.IMG.pic(src='/images/cat-3.png' alt='')
+          +e.caption Беседки
+        +e.A.item(href="#")
+          +e.IMG.pic(src='/images/cat-3.png' alt='')
+          +e.caption Заборы
+        +e.A.item(href="#")
+          +e.IMG.pic(src='/images/cat-3.png' alt='')
+          +e.caption Туалеты
+      +e.A.all(href="#") Все проекты

@@ -1,0 +1,72 @@
+.about
+  &__title
+    margin-bottom: 2rem
+  &__subtitle
+    color: $c3
+    line-height: 1.15
+    +fs(25px)
+    max-width: 450px
+    margin: 0 auto
+    font-family: $ff1
+    margin-bottom: 65px
+    text-align: center
+    font-style: italic
+  &__text
+    text-align: center
+    max-width: 780px
+    margin: 0 auto
+    text-align: center
+    line-height: 1.38
+
+.about-picture
+  display: flex
+  justify-content: space-between
+  &__col
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin: 0 .5rem
+    &_tpl-1
+      width: 25%
+    &_tpl-2
+      width: 12.5%
+      flex-flow: column
+  &__box
+    margin-bottom: 1rem
+    &_tpl-1
+      width: 100%
+    &_tpl-2
+      width: calc(50% - .5rem)
+  &__pic
+    width: 100%
+    vertical-align: middle
+    object-fit: cover
+  &__text
+    height: 174px
+    width: 100%
+    text-align: center
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: column
+    font-weight: 700
+    color: $c3
+    +fs(22px)
+    p
+      margin: 1rem 0
+  &__gl
+    position: relative
+    display: block
+    &:before
+      content: " "
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background: rgba(0,0,0,0.5)
+      transition: all .3s ease
+      z-index: 1
+    &:hover
+      &:before
+        opacity: 0

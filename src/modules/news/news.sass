@@ -1,0 +1,163 @@
+.news-index
+  position: relative
+  padding-bottom: 10rem
+  &:before
+    content: ''
+    width: calc(100% - 1540px)
+    height: 70%
+    background-color: $c2
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    min-width: 150px
+    +screen('max', 1023)
+      min-width: 120px
+      height: 50%
+    +screen('max', 575)
+      min-width: 46px
+  &__inner
+    +screen('max', 1280)
+      padding: 0
+    +screen('max', 1023)
+      padding: 0 2.5rem
+  &__title
+    text-transform: uppercase
+    padding: 6rem 0 6rem 17%
+    box-sizing: border-box
+    position: relative
+    +screen('max', 1280)
+      padding: 6rem 0 6rem 20%
+    +screen('max', 575)
+      padding: 6rem 10rem 6rem 20%
+      line-height: 1
+    span
+      color: $c4
+    &:before
+      content: ''
+      width: 20%
+      max-width: 184px
+      height: 5px
+      background: $c5
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      transition: .5s ease
+      +screen('max', 1023)
+        width: 18%
+  &__tabs
+    display: flex
+    justify-content: space-between
+    +screen('max', 1023)
+      display: block
+  &__pictures
+    max-width: 691px
+    width: 50%
+    +screen('max', 1280)
+      width: 45%
+    +screen('max', 1023)
+      max-width: 100%
+      width: 100%
+  &__content
+    max-width: 641px
+    width: 50%
+    +screen('max', 1280)
+      padding: 0 3rem
+      box-sizing: border-box
+      width: 55%
+    +screen('max', 1023)
+      padding: 0
+      width: 100%
+      display: flex
+      max-width: 100%
+      margin-top: 1rem
+      padding-left: 1rem
+      overflow: auto
+      padding-top: 50px
+      margin-top: -50px
+      scrollbar-width: none
+    &::-webkit-scrollbar
+      width: 0
+      height: 0
+  &__pic
+    width: 100%
+    object-fit: cover
+    vertical-align: middle
+    display: none
+    &.active
+      display: block
+  &__line
+    padding: 2.45rem 0
+    border-bottom: 1px solid rgba(#53524c, .2)
+    position: relative
+    cursor: pointer
+    +screen('max', 1280)
+      padding: 2.1rem 0
+    +screen('max', 1023)
+      padding: 2rem
+      border-bottom: 0
+      border-right: 1px solid rgba(#53524c, .2)
+      width: 33%
+    +screen('max', 575)
+      width: 70%
+      flex-shrink: 0
+    &:first-of-type
+      border-top: 1px solid rgba(#53524c, .2)
+      +screen('max', 1023)
+        border-top: 0
+        border-left: 1px solid rgba(#53524c, .2)
+    &:last-of-type
+      +screen('max', 1280)
+        display: none
+    &:before
+      content: ''
+      width: 0
+      height: 2px
+      background: $c4
+      position: absolute
+      top: 63px
+      right: calc(100% + 8px)
+      transition: .5s ease
+      +screen('max', 1023)
+        width: 2px
+        height: 0px
+        top: auto
+        bottom: 0
+        left: -1.5px
+        right: auto
+    &:hover
+      .news-index__text
+        font-weight: 400
+    &.active
+      &:before
+        width: 90px
+        +screen('max', 1023)
+          width: 2px
+          height: calc(100% + 50px)
+      .news-index__text
+        font-weight: 600
+  &__date
+    font-weight: 700
+    +fs(14px)
+    color: $c5
+    margin-bottom: .5rem
+    +screen('max', 1280)
+      +fs(12px)
+  &__text
+    +fs(18px)
+    height: 48px
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    overflow: hidden
+    letter-spacing: -0.54px
+    line-height: 1.45
+    +screen('max', 1280)
+      +fs(16px)
+      height: 44px
+    +screen('max', 1023)
+      height: auto
+      display: block
+      letter-spacing: -0.48px
