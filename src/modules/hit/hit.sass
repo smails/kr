@@ -4,6 +4,10 @@
     display: grid
     grid-template-columns: repeat(3, 31.5%)
     grid-gap: 30px
+    +screen('max', 1023)
+      grid-template-columns: repeat(2, 49%)
+    +screen('max', 575)
+      grid-template-columns: repeat(1, 100%)
   &__item
     border: 6px solid rgba(255,255,255,0.6)
     box-sizing: border-box
@@ -69,3 +73,6 @@
     padding: 2rem
     display: block
     margin: 5rem auto 0
+    box-sizing: border-box
+    +screen('max', 575)
+      width: 100%

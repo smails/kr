@@ -1,0 +1,18 @@
+mixin quize(vars)
+  +b.quize
+    +e.inner.inner
+      +e.box
+      +e.FORM.action
+        +e.P.title Не нашли проект, который Вам понравился?
+        +e.P.subtitle Создадим для Вас уникальный проект Вашего дома
+        +e.row
+          +b.INPUT.field(type="text" placeholder="Ваше имя")
+          +b.INPUT.field(type="tel" placeholder="Ваш телефон")
+          +e.BUTTON.submit Отправить
+        +e.sign
+          +e.LABEL.check
+            +e.INPUT.hidden(type="checkbox" checked)
+            +e.SPAN.txt
+              i
+              | Нажимая на кнопку, я даю свое согласие на обработку
+              a(href="#")  персональных данных

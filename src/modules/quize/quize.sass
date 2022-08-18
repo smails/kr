@@ -1,0 +1,88 @@
+.quize
+  padding: 7rem 0
+  background: $c3
+  &__box
+    width: 100%
+  &__action
+    margin-top: 7rem
+    text-align: center
+  &__title
+    +fs(36px)
+    font-weight: 700
+    color: #fff
+    margin-bottom: 2rem
+    +screen('max', 575)
+      +fs(28px)
+  &__subtitle
+    font-family: $ff1
+    +fs(25px)
+    color: #fff
+    font-style: italic
+    margin-bottom: 4rem
+    +screen('max', 575)
+      +fs(20px)
+  &__row
+    display: grid
+    grid-template-columns: repeat(3, 31%)
+    justify-content: space-between
+    +screen('max', 575)
+      display: block
+  &__submit
+    text-align: center
+    font-weight: 700
+    color: #fff
+    +fs(18px)
+    background: $c6
+    border-radius: 3px
+    margin-bottom: 1.5rem
+    display: block
+    width: 100%
+    +screen('max', 575)
+      height: 45px
+  &__check
+    position: relative
+    padding: .6rem .6rem .6rem 50px
+    cursor: pointer
+    display: inline-block
+    user-select: none
+    margin-right: 2rem
+    text-align: left
+    +screen('max', 575)
+      margin-bottom: 1rem
+  &__hidden
+    display: none
+    &:checked + span > i
+      background: $c5
+    &:checked + span > i:before
+      left: 18px
+  &__txt
+    +fs(14px)
+    color: #fff
+    i
+      position: absolute
+      top: 50%
+      margin-top: -10px
+      left: 0
+      width: 36px
+      height: 20px
+      border-radius: 10px
+      background: #edede8
+      transition: .2s
+      display: inline-block
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        margin-top: -8px
+        left: 2px
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background: #FFF
+        box-shadow: 0 2px 5px rgb(0 0 0 / 30%)
+        transition: .2s
+    a
+      border-bottom: 1px solid #fff
+      display: inline-block
+      color: #fff
+      margin-left: 0.2rem

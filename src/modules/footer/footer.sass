@@ -5,6 +5,8 @@
     position: relative
     justify-content: space-between
     display: flex
+    +screen('max', 575)
+      flex-wrap: wrap
     &::before
       content: 'Проектируем и строим уютные дома для счастливой жизни'
       position: absolute
@@ -19,9 +21,20 @@
       font-family: $ff1
       opacity: 0.8
       font-style: italic
+      +screen('max', 1023)
+        display: none
   &__social
     display: flex
     margin-top: 8.5rem
+    +screen('max', 1023)
+      margin-top: 0
+      position: absolute
+      top: 0
+      right: 20px
+    +screen('max', 575)
+      position: relative
+      right: 0
+      margin-top: 3rem
   &__ln
     width: 55px
     height: 55px
@@ -53,16 +66,24 @@
     line-height: 1.2
     color: #fff
     margin: 2rem 0
+    +screen('max', 575)
+      +fs(13px)
   &__list
     column-count: 2
     margin-top: 8.5rem
+    +screen('max', 575)
+      margin-top: 0
+      display: grid
+      grid-template-columns: repeat(2, 48%)
+      column-count: initial
   &__link
     +fs(17px)
     font-weight: 500
     color: #fff
-    display: inline-block
     border-bottom: 1px solid rgba(#fff, .6)
     padding-bottom: 0.1rem
+    +screen('max', 575)
+      +fs(13px)
   &__map
     width: 100%
     display: block
@@ -70,3 +91,10 @@
     +fs(15px)
     color: #8c8d8d
     text-align: right
+    +screen('max', 1023)
+      display: none
+  &__col
+    &:nth-of-type(2)
+      +screen('max', 575)
+        order: -1
+        margin-bottom: 5rem

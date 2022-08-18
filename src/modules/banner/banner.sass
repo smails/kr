@@ -3,8 +3,11 @@
   &__pic
     width: 100%
     vertical-align: middle
-    min-height: 700px
+    max-height: 700px
     object-fit: cover
+    height: 95vh
+    +screen('max', 575)
+      max-height: 500px
   &__title
     text-shadow: 0 0 10px rgba(5, 0, 2, 0.6)
     +fs(60px)
@@ -18,6 +21,11 @@
     max-width: 1160px
     color: #fff
     font-weight: 700
+    +screen('max', 1023)
+      +fs(40px)
+    +screen('max', 575)
+      +fs(30px)
+      bottom: 40%
   &__check-list
     position: absolute
     max-width: 1160px
@@ -29,6 +37,11 @@
     z-index: 9
     display: flex
     justify-content: space-around
+    box-sizing: border-box
+    +screen('max', 1023)
+      padding: 0 2rem
+    +screen('max', 575)
+      display: block
   &__item
     +fs(18px)
     color: #fff
@@ -39,6 +52,10 @@
     background-size: contain
     font-weight: 700
     padding: 3px 0 3px 32px
+    +screen('max', 1023)
+      padding: 3px 0 3px 50px
+    +screen('max', 575)
+      margin-bottom: 2rem
   .swiper-next
     width: 16px
     height: 28px
@@ -50,3 +67,11 @@
     position: absolute
     z-index: 99
     cursor: pointer
+  .swiper-pagination
+    bottom: 100px
+    +screen('max', 575)
+      bottom: 15px
+  .swiper-pagination-bullet
+    background: #fff
+  .swiper-pagination-bullet-active
+    background: $c5

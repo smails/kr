@@ -5,6 +5,7 @@ mixin header(state)
         +e.A.logo(href='/')
           +e.IMG.pic(src='/icon/icon-logo.png' alt='')
           +e.sign Строительство домов в Нижегородской области
+        +e.A.phone_mb(tel="tel:8 (831) 415-15-68") 8 (831) 415-15-68
         +e.map
           +e.P.address АвтоМОЛЛ Нижний Новгород
             br
@@ -35,3 +36,16 @@ mixin header(state)
             +e.A.link(href="#") Полезные статьи
           +e.LI.item
             +e.A.link(href="#") Контакты
+        +e.inf
+          +e.map_mobile
+            +e.P.address АвтоМОЛЛ Нижний Новгород
+              br
+              | Суздальская 66, оф. 8
+            +e.P.time пн-пт 08:00-18:00, сб - по дог.
+          +e.info_mobile
+            +e.cnt
+              +e.A.phone(tel="tel:8 (831) 415-15-68") 8 (831) 415-15-68
+              +e.A.mail(href="mailto:karasev4151568@yandex.ru") karasev4151568@yandex.ru
+            +e.social
+              +e.A.ln_viber(href="#")
+              +e.A.ln_whats(href="#")

@@ -4,5 +4,45 @@ html
   +head('Контакты')
   body.index
     +header()
+    +b.content
+      +e.head
+      +e.inner.inner
+        +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+          each link, index in ['Главная', 'Продукция']
+            if link == 'Продукция'
+              +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.SPAN.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+            else
+              +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+                +e.A.text(itemprop='item', title=link , href="#")
+                  +e.SPAN(itemprop='name')=link
+                  meta(itemprop='position', content=index)
+        +e.box
+          +e.H1.title Контакты
+          +b.contacts
+            +e.row
+              +e.info
+                +e.line_phone
+                  +e.P.sign Телефон:
+                  +e.A.phone(href='tel:+7 (831) 415-15-68') +7 (831) 415-15-68,
+                  +e.A.phone(href='tel:+7 (904) 904-10-10') +7 (904) 904-10-10,
+                  +e.A.phone(href='tel:+7 (950) 600-10-88') +7 (950) 600-10-88
+                +e.line_email
+                  +e.P.sign Email: 
+                  +e.A.email(href='karasev4151568@yandex.ru') karasev4151568@yandex.ru
+                +e.line_addr
+                  +e.P.sign Адрес:
+                  +e.A.cnt Карасёв Строй г. Нижний Новгород. АвтоМОЛЛ, Суздальская 70, зеленый павильон 1Г, помещение 9, 10. офис г.Нижний Новгород Суздальская 66, оф. 8.
+                +e.line_time
+                  +e.P.sign Часы работы:
+                  +e.A.cnt Ежедневно – с 8:00 до 18:00,
+                    br
+                    | воскресенье выходной.
+              +e.map-roll
+                +e.IMG.pic(src="/images/map-roll.jpg")
+            +e.map
+              script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A48358a119aba3fc1ad9e986e4f940aa348ba957b80acbca8eb93e9999fa87ed9&width=100%&height=100%&lang=ru_RU&scroll=false')
     +footer()
     include ../static/pug/_scripts

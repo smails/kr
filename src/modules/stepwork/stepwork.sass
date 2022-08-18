@@ -2,11 +2,16 @@
   &__list
     display: flex
     justify-content: space-between
+    +screen('max', 575)
+      flex-wrap: wrap
   &__item
     width: 16%
     padding: 0 1rem
     text-align: center
     box-sizing: border-box
+    +screen('max', 575)
+      width: 50%
+      margin-bottom: 5rem
   &__picture
     width: 100px
     height: 100px

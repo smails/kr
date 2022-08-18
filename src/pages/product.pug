@@ -60,17 +60,17 @@ html
                       +e.IMG.char-pic(src='/icon/icon-terrs.png' alt='')
                     +e.P.char-txt терасса
                 +e.nav-slider
-                  +e.nav-btn.active
+                  +e.A.nav-btn(href='/images/product.png' data-fancybox)
                     +e.IMG.thumb(src='/images/product.png' alt='')
-                  +e.nav-btn
+                  +e.A.nav-btn(href='/images/product.png' data-fancybox)
                     +e.IMG.thumb(src='/images/product.png' alt='')
-                  +e.nav-btn
+                  +e.A.nav-btn(href='/images/product.png' data-fancybox)
                     +e.IMG.thumb(src='/images/product.png' alt='')
-                  +e.nav-btn
+                  +e.A.nav-btn(href='/images/product.png' data-fancybox)
                     +e.IMG.thumb(src='/images/product.png' alt='')
-                  +e.nav-btn
+                  +e.A.nav-btn(href='/images/product.png' data-fancybox)
                     +e.IMG.thumb(src='/images/product.png' alt='')
-                  +e.nav-btn
+                  +e.A.nav-btn(href='/images/product.png' data-fancybox)
                     +e.IMG.thumb(src='/images/product.png' alt='')
               +e.slider.swiper-container
                 .swiper-wrapper
@@ -92,15 +92,75 @@ html
               +e.price
                 +e.P.label Стоимость от:
                 +e.P.cost 1 068 008 руб.
-              +e.bnts
+              +e.btns
                 +e.A.btn_outline Получить консультацию
-                +e.A.btn Скачать смету
+                +e.BUTTON.btn.js-open-call Скачать смету
             +e.bottom
               +e.tabs
                 +e.tab.active Описание
                 +e.tab Характеристики
               +e.box(display="block")
                 +e.content
+                  +e.table
+                    table.table-header(style='width: 99.5672%; height: 100px;')
+                      tbody
+                        tr(style='height: 50px;')
+                          td(style='width: 34.7942%; height: 50px;')
+                            p
+                              strong «Стандарт»
+                          td(style='width: 31.3099%; height: 50px;')
+                            p
+                              strong «Комфорт»
+                          td(style='width: 32.8125%; height: 50px;')
+                            p
+                              strong «Престиж»
+                        tr(style='height: 50px;')
+                          td(style='width: 34.7942%; height: 50px;')
+                            p
+                              strong 2945000р.
+                          td(style='width: 31.3099%; height: 50px;')
+                            p
+                              strong р.
+                          td(style='width: 32.8125%; height: 50px;')
+                            p
+                              strong р.
+                    p
+                    table(style='width: 99.8387%;')
+                      tbody
+                        tr
+                          td(style='width: 34.9892%;')
+                            +b.table-cell
+                              +e.title Столбчатый из блоков
+                              +e.info
+                                +e.IMG.pic(src='/images/about-7.png' alt='')
+                                +e.content
+                                  ul
+                                    li 6 точек опоры;
+                                    li блок 200х200х400 мм;
+                                    li 2 блока в опоре
+                                  +e.price 3600 руб.
+                          td(style='width: 31.3183%;')
+                            +b.table-cell
+                              +e.title Столбчатый из блоков
+                              +e.info
+                                +e.IMG.pic(src='/images/about-7.png' alt='')
+                                +e.content
+                                  ul
+                                    li 6 точек опоры;
+                                    li блок 200х200х400 мм;
+                                    li 2 блока в опоре
+                                  +e.price 3600 руб.
+                          td(style='width: 32.8848%;')
+                            +b.table-cell
+                              +e.title Столбчатый из блоков
+                              +e.info
+                                +e.IMG.pic(src='/images/about-7.png' alt='')
+                                +e.content
+                                  ul
+                                    li 6 точек опоры;
+                                    li блок 200х200х400 мм;
+                                    li 2 блока в опоре
+                                  +e.price 3600 руб.
               +e.box
                 +e.content
     +b.product-sale
@@ -111,7 +171,7 @@ html
             +e.P.title Аренда бытовки
               br
               | в подарок
-            +e.A.btn Узнать больше о подарках
+            +e.A.btn.js-open-modal(href="#success") Узнать больше о подарках
         +e.item
           +e.IMG.pic(src='/images/vnt-2.png' alt='')
           +e.content
@@ -119,14 +179,14 @@ html
             +e.P.text Мы позаботились о самом
               br
               | важном месте в вашем доме
-            +e.A.btn Узнать больше о подарках
+            +e.A.btn.js-open-modal(href="#callback") Узнать больше о подарках
         +e.item
           +e.IMG.pic(src='/images/vnt-3.png' alt='')
           +e.content
             +e.P.title Доставка на объект
               br
               | в подарок
-            +e.A.btn Узнать больше о подарках
+            +e.A.btn.js-open-modal(href="#callback") Узнать больше о подарках
     +b.product-vnt
       +e.inner.inner
         +e.item
@@ -175,4 +235,94 @@ html
     +review()
     +partners()
     +footer()
+    +b.calc-modal
+      +e.box
+        +e.head
+          +e.P.title Дом из рубленного бревна 152 м2
+          +e.close
+            +e.IMG.close-pic(src='/icon/icon-calc-close.png' alt='')
+        +e.contain
+          +e.picture
+            +e.IMG.pic(src="/images/product.png")
+          +e.FORM.calc
+            +e.row
+              +e.name Комплектация
+              +e.checks
+                +e.LABEL.check.active(data-title="Базовая")
+                  +e.INPUT.hidden(type="radio" name="Комплектация" value="Базовая" data-value="364000" checked)
+                  +e.text 364 000 ₽
+                    span 420 000 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+                +e.LABEL.check(data-title="Оптимальная")
+                  +e.INPUT.hidden(type="radio" name="Комплектация" value="Оптимальная" data-value="520000")
+                  +e.text 520 000 ₽
+                    span 520 000 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+                +e.LABEL.check(data-title="Премиум")
+                  +e.INPUT.hidden(type="radio" name="Комплектация" value="Премиум" data-value="900000")
+                  +e.text 900 000 ₽
+                    span 1 200 000 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+            +e.row
+              +e.name Фундамент
+              +e.checks
+                +e.LABEL.check(data-title="Дополнительный ряд блоков")
+                  +e.INPUT.hidden(type="radio" name="Фундамент" value="Дополнительный ряд блоков" data-value="22113")
+                  +e.text +22 113 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+                +e.LABEL.check(data-title="Винтовые сваи")
+                  +e.INPUT.hidden(type="radio" name="Фундамент" value="Винтовые сваи" data-value="22113")
+                  +e.text +22 113 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+                +e.LABEL.check(data-title="Монолитно-ростверковый")
+                  +e.INPUT.hidden(type="radio" name="Фундамент" value="Монолитно-ростверковый" data-value="22113")
+                  +e.text +22 113 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+            +e.row
+              +e.name Инженерные сети
+              +e.checks
+                +e.LABEL.check(data-title="Вентиляция «Весту»")
+                  +e.INPUT.hidden(type="checkbox" name="Инженерные сети" value="Вентиляция «Весту»" data-value="22113")
+                  +e.text +22 113 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+                +e.LABEL.check(data-title="Септик «Лайт»")
+                  +e.INPUT.hidden(type="checkbox" name="Инженерные сети" value="Септик «Лайт»" data-value="22113")
+                  +e.text +22 113 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+                +e.LABEL.check(data-title="Электрика")
+                  +e.INPUT.hidden(type="checkbox" name="Инженерные сети" value="Электрика" data-value="22113")
+                  +e.text +22 113 ₽
+                  +e.hidden-pic
+                    +e.IMG.i(src='/images/about-4.png' alt='')
+            +e.price
+              +e.price-txt Итого:
+              +e.price-numb
+                span 364 000
+                | руб.
+            +b.calc-form
+              +e.box
+                +e.P.title Оставить заявку
+                +e.row
+                  input(type="hidden" name="Тип")
+                  +b.INPUT.field(type="text" name="Имя" placeholder="Ваше имя")
+                  +b.INPUT.field(type="email" name="cnt" placeholder="Ваш email")
+                  +e.BUTTON.submit Отправить
+                +e.sign
+                  +e.LABEL.check
+                    +e.INPUT.hidden(type="checkbox" checked)
+                    +e.SPAN.txt
+                      i
+                      | Нажимая на кнопку, я даю свое согласие на обработку
+                      a(href="[[~171]]")  персональных данных
+            +e.control
+              +e.btn_outline.js-open-calc-form(data-call='smeta') Сохранить смету
+              +e.btn.js-open-calc-form(data-call='call') Оставить заявку
     include ../static/pug/_scripts

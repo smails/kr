@@ -49,3 +49,19 @@ $('.work__tab').click(function () {
   $('.work__box').hide();
   $(`.work__box`).eq(index).show();
 });
+
+
+window.addEventListener('scroll', () => {
+  const up = document.querySelector('.up');
+  if(window.pageYOffset > 300){
+    up.style.opacity = 1;
+  } else{
+    up.style.opacity = 0;
+  }
+})
+
+$('.up').click(function () {
+  $('html, body').animate({
+    scrollTop: 0
+  })
+})

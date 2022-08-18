@@ -35,10 +35,15 @@ html
                       i
                       | До 1 млн
                   +e.LABEL.check
+                    +e.INPUT.hidden(type="checkbox" checked)
+                    +e.SPAN.txt
+                      i
+                      | От 1 до 3 млн
+                  +e.LABEL.check
                     +e.INPUT.hidden(type="checkbox")
                     +e.SPAN.txt
                       i
-                      | До 1 млн
+                      | Свыше 3 млн
               +e.row
                 +e.name Площадь:
                 +e.check-list

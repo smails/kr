@@ -11,16 +11,32 @@
     margin-bottom: 65px
     text-align: center
     font-style: italic
+    +screen('max', 575)
+      +fs(20px)
   &__text
     text-align: center
     max-width: 780px
     margin: 0 auto
     text-align: center
     line-height: 1.38
+    +screen('max', 575)
+      +fs(14px)
 
 .about-picture
-  display: flex
-  justify-content: space-between
+  width: 99vw
+  overflow: hidden
+  +screen('max', 575)
+    display: none
+  &__row
+    display: flex
+    justify-content: space-between
+    +screen('max', 1600)
+      width: 1900px
+      transform: translateX(-30vw)
+    +screen('max', 1200)
+      transform: translateX(-50vw)
+    +screen('max', 1023)
+      transform: translateX(-80vw)
   &__col
     display: flex
     flex-wrap: wrap

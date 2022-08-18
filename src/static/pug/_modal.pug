@@ -1,3 +1,28 @@
 +b.modal(data-type="#callback")
   +e.container
     +e.BUTTON.close
+      svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14')
+        g(opacity='.4' fill='#171717')
+          path(d='M12.83 0 14 1.17 1.17 14 0 12.83 12.83 0Z')
+          path(d='M14 12.83 12.83 14 0 1.17 1.17 0 14 12.83Z')
+    +e.FORM.form
+      +e.P.caption Оставьте заявку
+      +e.P.subcaption Наш менеджер свяжется с Вами в ближайшее время и ответит на все вопросы
+      +b.INPUT.field(type="text" placeholder="Ваше имя")
+      +b.INPUT.field(type="tel" placeholder="Ваш телефон")
+      +e.BUTTON.submit.btn Отправить
+      +e.P.sign Нажимая на кнопку, я даю свое согласие на 
+        a(href="#")  обработку персональных данных
+
++b.modal(data-type="#success")
+  +e.box
+    +e.BUTTON.close
+      svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14')
+        g(opacity='.4' fill='#171717')
+          path(d='M12.83 0 14 1.17 1.17 14 0 12.83 12.83 0Z')
+          path(d='M14 12.83 12.83 14 0 1.17 1.17 0 14 12.83Z')
+    +b.SVG.checkmark(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52')
+      +e.CIRCLE.circle(cx='26' cy='26' r='25' fill='none')
+      +e.PATH.check(fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8')
+    +e.P.holder Спасибо за заявку!
+    +e.P.subholder Мы с вами свяжемся в ближайшее время.

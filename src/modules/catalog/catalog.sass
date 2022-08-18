@@ -12,8 +12,15 @@
     margin-bottom: 3rem
     box-sizing: border-box
     transition: .5s ease
+    +screen('max', 1023)
+      width: 49%
+    +screen('max', 575)
+      width: 100%
+      height: 250px
     &_full
       width: 66%
+      +screen('max', 1023)
+        width: 100%
     &:before
       content: " "
       position: absolute
@@ -35,6 +42,8 @@
     bottom: 3rem
     left: 3rem
     z-index: 2
+    +screen('max', 575)
+      +fs(25px)
   &__pic
     width: 100%
     height: 100%
@@ -51,3 +60,6 @@
     padding: 2rem
     display: block
     margin: 2rem auto 0
+    box-sizing: border-box
+    +screen('max', 575)
+      width: 100%

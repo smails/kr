@@ -47,6 +47,8 @@ body
   font-weight: 700
   color: $c2
   margin-bottom: 7rem
+  +screen('max', 575)
+    +fs(28px)
 
 .btn
   border-radius: 19.5px
@@ -62,15 +64,6 @@ body
     border-color: $c3
     background-color: $c3
     color: #fff
-.modal
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: 99999
-  background: rgba(0, 0, 0, 0.6)
-  display: none
 
 .breadcrumb
   padding-bottom: 3rem
@@ -92,6 +85,10 @@ body
   background-color: $c4
   position: relative
   overflow: hidden
+  +screen('max', 1200)
+    padding-top: 23rem
+  +screen('max', 575)
+    padding-top: 18rem
   &::before, &::after
     content: ''
     width: 300px
@@ -99,14 +96,14 @@ body
     position: absolute
     top: 0
     background-repeat: repeat-y
-    background-position: center
     display: block
-    mix-blend-mode: color-burn
   &:before
     background-image: url(../images/bg-left.png)
+    background-position: right
     left: 0
   &:after
     background-image: url(../images/bg-right.png)
+    background-position: left
     right: 0
   &__head
     background-image: url(../images/head.png)
@@ -121,8 +118,14 @@ body
     +fs(60px)
     line-height: 1.1
     margin: 3rem 0 4rem
+    +screen('max', 1200)
+      +fs(40px)
+    +screen('max', 575)
+      +fs(30px)
   &__text
     line-height: 1.5
+    overflow: auto
+    padding: 3px
     h2,h3,h4
       text-align: center
       font-weight: 700
@@ -130,6 +133,47 @@ body
       margin-bottom: 2rem
     p
       margin-bottom: 2rem
+    a
+      color: $c3
+    .table
+      +screen('max', 575)
+        width: 200vw
+  &__img
+    width: 300px
+    float: left
+    margin-right: 2rem
+    margin-bottom: 2rem
+    vertical-align: middle
+  &__inner
+    position: relative
+    z-index: 9
+.table
+  width: 100%
+  margin-bottom: 20px
+  border: 5px solid #fff
+  border-top: 5px solid #fff
+  border-bottom: 3px solid #fff
+  border-collapse: collapse
+  outline: 3px solid #00a53d
+  font-size: 15px
+  background: #fff !important
+  th
+    font-weight: bold
+    padding: 7px
+    background: #00a53d
+    border: none
+    text-align: left
+    font-size: 15px
+    border-top: 3px solid #fff
+    border-bottom: 3px solid #00a53d
+  td
+    padding: 7px
+    border: none
+    border-top: 1px solid #00a53d
+    border-bottom: 1 solid #00a53d
+    font-size: 15px
+  tbody tr:nth-child(even)
+    background: #f8f8f8 !important
 
 .products
   padding-bottom: 10rem
@@ -155,12 +199,19 @@ body
     grid-template-columns: repeat(3, 31.5%)
     grid-gap: 30px
     justify-content: space-between
+    +screen('max', 1023)
+      grid-template-columns: repeat(2, 48%)
+    +screen('max', 575)
+      display: block
   &__cat
     border: 6px solid rgba(255,255,255,0.6)
     box-sizing: border-box
     transition: .5s ease
     position: relative
     height: 285px
+    display: block
+    +screen('max', 575)
+      margin-bottom: 2rem
     &:hover
       box-shadow: 0px 15px 50px 0px rgb(54 38 9 / 20%)
   &__caption
@@ -205,23 +256,31 @@ body
     background: #fff
     border: 6px solid rgba($c4,0.6)
     margin-bottom: 4rem
+    +screen('max', 575)
+      padding: 2rem
   &__row
     display: flex
     margin-bottom: 2rem
     align-items: center
+    +screen('max', 575)
+      display: block
     &:last-of-type
       margin-bottom: 0
   &__name
     font-weight: 700
     width: 90px
     margin-right: 3rem
+    +screen('max', 575)
+      margin-bottom: 2rem
   &__check
     position: relative
-    padding: .6rem .6rem .6rem 4rem
+    padding: .6rem .6rem .6rem 40px
     cursor: pointer
     display: inline-block
     user-select: none
     margin-right: 2rem
+    +screen('max', 575)
+      margin-bottom: 1rem
   &__hidden
     display: none
     &:checked + span > i
@@ -229,6 +288,8 @@ body
     &:checked + span > i:before
       left: 18px
   &__txt
+    +screen('max', 575)
+      +fs(14px)
     i
       position: absolute
       top: 50%
@@ -310,6 +371,7 @@ body
       border: 1px solid #ccc
       vertical-align: middle
       padding: 8px
+      position: relative
     table td p
       margin-bottom: 0
     h2
@@ -322,17 +384,33 @@ body
   &__head
     display: flex
     justify-content: space-between
+    +screen('max', 1023)
+      flex-wrap: wrap-reverse
   &__info
     width: 25%
     max-width: 260px
     margin-right: 4rem
     flex-shrink: 0
+    +screen('max', 1023)
+      width: 100%
+      max-width: 100%
+      margin-top: 3rem
+      display: flex
+      justify-content: space-between
+    +screen('max', 575)
+      display: block
   &__char
     display: grid
     grid-template-columns: repeat(2, 47%)
     grid-gap: 20px
     justify-content: space-between
     margin: 3.5rem 0
+    +screen('max', 1023)
+      width: 50%
+      margin: 0
+    +screen('max', 575)
+      width: 70%
+      margin-top: 3rem
   &__char-head
     max-width: 80%
     display: flex
@@ -354,22 +432,28 @@ body
     grid-template-columns: repeat(2, 47%)
     grid-gap: 16px
     justify-content: space-between
+    +screen('max', 1023)
+      display: none
   &__nav-btn
     transition: .5s ease
+    cursor: pointer
     &.active
       border: 3px solid $c3
       box-sizing: border-box
   &__pic
     width: 100%
+    max-height: 680px
+    object-fit: contain
   &__swiper-btn
     width: 16px
     height: 28px
-    background-image: url(../icon/icon-arrow-white.png)
+    background-image: url(../icon/icon-arrow.svg)
     background-repeat: no-repeat
     background-position: center
     position: absolute
     z-index: 99
     cursor: pointer
+    background-size: cover
     top: 50%
     transform: translateY(-50%)
     opacity: 0.5
@@ -387,6 +471,8 @@ body
     display: flex
     justify-content: space-between
     border: 6px solid rgba($c4, .6)
+    +screen('max', 1023)
+      display: block
   &__label
     +fs(14px)
     color: #666
@@ -396,6 +482,10 @@ body
     font-weight: 700
   &__btns
     display: flex
+    +screen('max', 1023)
+      margin-top: 3rem
+    +screen('max', 575)
+      display: block
   &__btn
     border-radius: 3px
     background-color: $c3
@@ -408,6 +498,11 @@ body
     display: inline-block
     width: 250px
     cursor: pointer
+    +screen('max', 1023)
+      width: 100%
+      margin-bottom: 1rem
+      width: 100%
+      box-sizing: border-box
     &_outline
       background: transparent
       border: 2px solid $c3
@@ -445,6 +540,7 @@ body
       border: 1px solid #ccc
       vertical-align: middle
       padding: 8px
+      position: relative
     table td p
       margin-bottom: 0
     table.table-header
@@ -458,6 +554,12 @@ body
       +fs(26px)
       margin-bottom: 20px
       margin-top: 26px
+  &__table
+    +screen('max', 1200)
+      width: 1100px
+  &__content
+    +screen('max', 1200)
+      overflow: auto
 
 .product-sale
   margin: 6rem 0
@@ -465,11 +567,25 @@ body
     display: grid
     grid-template-columns: repeat(3, 30%)
     justify-content: space-between
+    +screen('max', 1023)
+      grid-template-columns: repeat(2, 49%)
+    +screen('max', 575)
+      display: block
   &__item
     position: relative
+    +screen('max', 575)
+      margin-bottom: 3rem
+    &:last-of-type
+      +screen('max', 1023)
+        display: none
   &__pic
     width: 100%
     vertical-align: middle
+    object-fit: cover
+    +screen('max', 1200)
+      height: 230px
+    +screen('max', 575)
+      height: 200px
   &__content
     position: absolute
     top: 0
@@ -510,12 +626,19 @@ body
     display: flex
     justify-content: space-between
     align-items: center
+    +screen('max', 575)
+      display: block
   &__item
     display: flex
     align-items: center
+    +screen('max', 575)
+      width: 100%
+      margin-bottom: 2rem
   &__caption
     +fs(18px)
     font-weight: 700
+    +screen('max', 1023)
+      +fs(16px)
   &__picture
     width: 85px
     height: 85px
@@ -526,6 +649,11 @@ body
     border: 4px solid #edede8
     margin: 0 auto
     margin-right: 1.5rem
+    flex-shrink: 0
+    +screen('max', 1023)
+      margin-right: 1rem
+    +screen('max', 1023)
+      margin-left: 0
 
 .product-call
   &__box
@@ -542,6 +670,10 @@ body
     background: rgba(#000, .6)
     flex-flow: column
     position: relative
+    +screen('max', 1023)
+      padding: 40px 50px
+    +screen('max', 575)
+      padding: 30px 15px
     &:before
       content: ''
       width: 60%
@@ -553,18 +685,31 @@ body
       top: 0
       background-size: contain
       background-repeat: no-repeat
+      +screen('max', 1200)
+        width: 40%
+        height: 200px
+      +screen('max', 1023)
+        content: none
   &__sign
     text-align: right
     +fs(25px)
     font-family: $ff1
     font-style: italic
+    +screen('max', 575)
+      +fs(18px)
   &__title
     +fs(36px)
     font-weight: 700
     margin: 0.5rem 0
+    +screen('max', 575)
+      +fs(28px)
+      margin: 2rem 0
   &__list
     column-count: 2
     margin: 5rem 0 4rem
+    +screen('max', 575)
+      column-count: 1
+      width: 100%
   &__item
     +fs(18px)
     color: #fff
@@ -579,6 +724,8 @@ body
     display: flex
     justify-content: flex-end
     align-items: center
+    +screen('max', 1023)
+      display: block
   &__btn
     border-radius: 3px
     background-color: $c3
@@ -589,6 +736,17 @@ body
     font-weight: 700
     padding: 2rem
     cursor: pointer
+    flex-shrink: 0
+    display: block
+    box-sizing: border-box
+    +screen('max', 1200)
+      width: 250px
+    +screen('max', 1023)
+      margin-top: 2rem
+      margin-right: 0
+      margin-left: auto
+    +screen('max', 575)
+      width: 100%
   &__txt
     +fs(18px)
     line-height: 1.3
@@ -596,6 +754,8 @@ body
     font-weight: 700
     text-transform: uppercase
     margin-right: 4rem
+    +screen('max', 1023)
+      margin-right: 0
 
 .news
   display: grid
@@ -612,6 +772,8 @@ body
     box-sizing: border-box
     transition: .5s ease
     background: #fff
+    display: block
+    margin-bottom: 2rem
     &:hover
       box-shadow: 0px 15px 50px 0px rgb(54 38 9 / 20%)
   &__pic
@@ -648,6 +810,8 @@ body
     +fs(16px)
     margin-right: 2rem
     font-family: $ff2
+    +screen('max', 575)
+      +fs(14px)
     &:hover, &.active
       background: $c3
       border-color: $c3
@@ -656,18 +820,21 @@ body
     display: none
   &__pic
     width: 100%
-    height: 650px
-    object-fit: cover
+    height: 500px
+    object-fit: contain
     vertical-align: middle
+    +screen('max', 575)
+      height: 80vw
   &__swiper-btn
     width: 16px
     height: 28px
-    background-image: url(../icon/icon-arrow-white.png)
+    background-image: url(../icon/icon-arrow.svg)
     background-repeat: no-repeat
     background-position: center
     position: absolute
     z-index: 99
     cursor: pointer
+    background-size: cover
     top: 50%
     transform: translateY(-50%)
     opacity: 0.5
@@ -678,3 +845,616 @@ body
       transform: rotate(180deg)
     &:hover
       opacity: 1
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 99999
+  background: rgba(#171717, 0.6)
+  display: none
+  &__close
+    position: absolute
+    right: 2rem
+    top: 2rem
+    svg
+      width: 14px
+      height: 14px
+    g
+      transition: .5s ease
+    &:hover
+      g
+        fill: $c2
+  &__container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: #FFFFFF
+    box-shadow: 0px 64px 134px rgba(0, 0, 0, 0.1)
+    box-sizing: border-box
+    padding: 4rem 4rem 3rem
+    text-align: center
+    max-width: 400px
+    width: 90%
+  &__caption
+    font-weight: 700
+    +fs(32px)
+    margin-bottom: 1rem
+    text-align: left
+  &__subcaption
+    line-height: 1.4
+    margin-bottom: 1.5rem
+    text-align: left
+  &__submit
+    width: 100%
+    border-radius: 3px
+    color: #fff
+    background: #565656
+    border: 0
+    padding: 2rem
+  &__sign
+    text-align: center
+    +fs(13px)
+    color: #898989
+    line-height: 1.2
+    margin-top: 1.5rem
+    a
+      display: block
+      +screen('max', 1023)
+        display: inline-block
+  &__box
+    max-width: 350px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: #FFFFFF
+    padding: 5rem 3rem 3rem
+    text-align: center
+    background-clip: padding-box
+    border: 6px solid rgba(255,255,255,0.6)
+    width: 96%
+    box-sizing: border-box
+  &__holder
+    font-weight: 700
+    +fs(26px)
+    margin: 4rem 0 1.5rem
+  &__subholder
+    line-height: 1.4
+    margin-bottom: 1.5rem
+  .field
+    border-color: rgba(35, 37, 41, 0.7)
+
+.field
+  width: 100%
+  padding: 2rem
+  box-sizing: border-box
+  display: block
+  margin-bottom: 1.5rem
+  +fs(16px)
+  font-weight: 300
+  background-color: #fff
+  border: 1px solid transparent
+  border-radius: 3px
+  &.area
+    resize: none
+    height: 100px
+  &:placeholder
+    color: rgba(35, 37, 41, 0.7)
+  &:focus
+    border-color: $c2
+  &_area
+    resize: none
+    height: 140px
+
+.checkmark
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  display: block
+  stroke-width: 3
+  stroke: #fff
+  stroke-miterlimit: 10
+  margin: 6% auto
+  box-shadow: inset 0px 0px 0px #53b11a
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+  &__circle
+    stroke-dasharray: 166
+    stroke-dashoffset: 166
+    stroke-width: 2
+    stroke-miterlimit: 10
+    stroke: #53b11a
+    fill: none
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+  &__check
+    transform-origin: 50% 50%
+    stroke-dasharray: 48
+    stroke-dashoffset: 48
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+
+.contacts
+  margin-bottom: 6rem
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    +screen('max', 575)
+      flex-wrap: wrap-reverse
+  &__info
+    +screen('max', 575)
+      margin-top: 5rem
+  &__line
+    margin-bottom: 2rem
+    padding-left: 60px
+    background-repeat: no-repeat
+    background-position: left top
+    background-size: 35px
+    &_phone
+      background-image: url(../images/free-icon-telephone-126341.png)
+    &_email
+      background-image: url(../images/free-icon-mail-646135.png)
+    &_addr
+      background-image: url(../images/free-icon-home-3203071.png)
+    &_time
+      background-image: url(../images/premium-icon-clock-3371432.png)
+  &__sign
+    +fs(18px)
+    margin-bottom: .5rem
+  &__phone
+    +fs(18px)
+    transition: .5s ease
+    display: block
+    margin-bottom: 1rem
+    &:hover
+      color: $c2
+  &__email
+    +fs(18px)
+    display: inline-block
+    transition: .5s ease
+    &:hover
+      color: $c2
+  &__cnt
+    +fs(18px)
+    line-height: 1.3
+  &__map-roll
+    width: 70%
+    flex-shrink: 0
+    height: 430px
+    margin-left: 1rem
+    +screen('max', 575)
+      width: 100%
+      margin-left: 0
+      height: 220px
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  &__map
+    width: 100%
+    height: 300px
+    margin-top: 5rem
+
+.table-cell
+  padding-bottom: 4rem
+  &__title
+    font-weight: 700
+    margin: 1rem 0
+  &__info
+    display: flex
+    align-items: flex-start
+    &_float
+      display: block
+  &__pic
+    width: 100px
+    height: 100px
+    border-radius: 100%
+    &_float
+      float: left
+      margin-right: 5px
+  &__content
+    ul
+      list-style-type: disc
+      margin-left: 3rem
+    li
+      margin-bottom: .5rem
+  &__price
+    font-weight: 700
+    text-align: right
+    position: absolute
+    right: 2rem
+    bottom: 2rem
+.calc-modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, .8)
+  z-index: 99
+  display: none
+  &__box
+    max-width: 1160px
+    width: 96%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    margin: 0 auto
+    overflow: auto
+    +screen('max', 575)
+      overflow: auto
+  &__head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 2rem 0
+  &__title
+    +fs(36px)
+    color: #fff
+    font-weight: 700
+    line-height: 1
+    margin-right: 2rem
+    +screen('max', 575)
+      +fs(20px)
+  &__close
+    width: 54px
+    height: 54px
+    background-color: rgba(#ffffff, .8)
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 100%
+    cursor: pointer
+    +screen('max', 575)
+      width: 40px
+      height: 40px
+      flex-shrink: 0
+  &__close-pic
+    vertical-align: middle
+  &__contain
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    border: 6px solid rgba(248, 248, 246, 0.6)
+    background-color: #ffffff
+    padding: 2rem
+    box-sizing: border-box
+    position: relative
+    +screen('max', 1023)
+      display: block
+  &__picture
+    width: 40%
+    max-width: 420px
+    flex-shrink: 0
+    +screen('max', 1200)
+      width: 35%
+    +screen('max', 575)
+      width: 100%
+  &__pic
+    max-width: 100%
+  &__calc
+    width: 60%
+    +screen('max', 1200)
+      width: 63%
+    +screen('max', 1023)
+      width: 100%
+  &__row
+    display: flex
+    align-items: flex-start
+    margin-top: 3rem
+    +screen('max', 575)
+      display: block
+  &__name
+    width: 120px
+    margin-right: 2rem
+    font-weight: 500
+    +screen('max', 575)
+      width: auto
+      +fs(14px)
+      margin-bottom: 1rem
+  &__checks
+    display: flex
+    width: calc(100% - 140px)
+    flex-shrink: 0
+    flex-wrap: wrap
+    +screen('max', 575)
+      width: 100%
+      display: block
+  &__check
+    display: block
+    width: 33%
+    background: #edeadf
+    flex-shrink: 0
+    padding: 1rem 1.5rem
+    box-sizing: border-box
+    cursor: pointer
+    position: relative
+    +screen('max', 575)
+      width: 100%
+      padding: 10px
+      margin-bottom: 0.5rem
+    &::before
+      content: attr(data-title)
+      display: block
+      +fs(12px)
+      margin-bottom: .7rem
+    &.active
+      background-color: #000000
+      color: #fff
+  &__hidden
+    display: none
+    &:checked + .calc-modal__text:after
+      opacity: 1
+  &__text
+    font-weight: 700
+    position: relative
+    padding-left: 25px
+    line-height: 1
+    +fs(17px)
+    +screen('max', 1200)
+      +fs(14px)
+    &:before
+      content: ''
+      width: 17px
+      height: 17px
+      border: 1px solid #e4e1d2
+      background-color: #ffffff
+      border-radius: 100%
+      position: absolute
+      top: 0
+      left: 0
+    &::after
+      content: ''
+      width: 13px
+      height: 13px
+      background: url(../icon/icon-check.png) center/contain no-repeat
+      position: absolute
+      top: 0
+      left: 5px
+      transition: .5s ease
+      opacity: 0
+    span
+      font-size: 12px
+      display: inline-block
+      margin-left: 25px
+      text-decoration: line-through #000
+  &__i
+    padding: 1rem
+    background: #fff
+    display: block
+    border-radius: 100%
+    position: absolute
+    display: none
+    width: 100px
+    height: 100px
+    transform: translateY(-50%)
+    object-fit: cover
+  &__price
+    margin-top: 3rem
+    border-top: 1px solid $c3
+    padding-top: 4rem
+    display: flex
+    align-items: flex-end
+  &__price-txt
+    +fs(25px)
+    font-weight: 700
+    margin-right: 3rem
+    +screen('max', 575)
+      +fs(20px)
+  &__price-numb
+    +fs(30px)
+    font-weight: 700
+    +screen('max', 575)
+      +fs(25px)
+    span
+      margin-right: 1rem
+  &__control
+    margin-top: 4rem
+    margin-bottom: 3rem
+  &__btn
+    border-radius: 3px
+    background-color: $c3
+    text-align: center
+    color: #fff
+    +fs(14px)
+    font-weight: 700
+    padding: 2rem
+    display: inline-block
+    width: 47%
+    cursor: pointer
+    box-sizing: border-box
+    +screen('max', 575)
+      width: 100%
+      margin-bottom: 1rem
+      width: 100%
+      box-sizing: border-box
+    &_outline
+      background: transparent
+      border: 2px solid $c3
+      color: $c3
+      margin-right: 3rem
+      box-sizing: border-box
+      padding: 1.8rem 2rem
+  &__hidden-pic
+    position: absolute
+    right: 10px
+    top: 50%
+    transform: translateY(-50%)
+    width: 20px
+    height: 20px
+    background: url(../icon/icon-picture.png) center/contain no-repeat
+    +screen('max', 575)
+      display: none
+    &.visible
+      z-index: 99
+
+.calc-form
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: #fff
+  display: none
+  &__box
+    position: absolute
+    max-width: 800px
+    width: 100%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  &__title
+    +fs(36px)
+    font-weight: 700
+    margin-bottom: 2rem
+    +screen('max', 575)
+      +fs(28px)
+  &__row
+    display: grid
+    grid-template-columns: repeat(3, 31%)
+    justify-content: space-between
+    +screen('max', 575)
+      display: block
+  &__submit
+    text-align: center
+    font-weight: 700
+    color: #fff
+    +fs(18px)
+    background: $c6
+    border-radius: 3px
+    margin-bottom: 1.5rem
+    display: block
+    width: 100%
+    +screen('max', 575)
+      height: 45px
+  &__check
+    position: relative
+    padding: .6rem .6rem .6rem 50px
+    cursor: pointer
+    display: inline-block
+    user-select: none
+    margin-right: 2rem
+    text-align: left
+    +screen('max', 575)
+      margin-bottom: 1rem
+  &__hidden
+    display: none
+    &:checked + span > i
+      background: $c5
+    &:checked + span > i:before
+      left: 18px
+  &__txt
+    +fs(14px)
+    color: #000
+    i
+      position: absolute
+      top: 50%
+      margin-top: -10px
+      left: 0
+      width: 36px
+      height: 20px
+      border-radius: 10px
+      background: #edede8
+      transition: .2s
+      display: inline-block
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        margin-top: -8px
+        left: 2px
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background: #FFF
+        box-shadow: 0 2px 5px rgb(0 0 0 / 30%)
+        transition: .2s
+    a
+      border-bottom: 1px solid #000
+      display: inline-block
+      color: #000
+      margin-left: 0.2rem
+  .field
+    border-color: rgba(35, 37, 41, 0.7)
+
+.up
+  position: fixed
+  bottom: 3vh
+  left: 2vw
+  width: 60px
+  height: 60px
+  background-image: url(../icon/icon-up.svg)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  transition: .5s ease
+  opacity: 0
+  cursor: pointer
+  +screen('max', 1200)
+    width: 40px
+    height: 40px
+  +screen('max', 575)
+    display: none
+
+.wrap
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+
+.button
+  min-width: 300px
+  min-height: 60px
+  font-family: 'Nunito', sans-serif
+  font-size: 22px
+  text-transform: uppercase
+  letter-spacing: 1.3px
+  font-weight: 700
+  color: #fff
+  background: #4FD1C5
+  background: linear-gradient(90deg, rgba(3, 155, 229, 1) 0%, rgba(3, 155, 229, 1) 100%)
+  border: none
+  border-radius: 1000px
+  box-shadow: 12px 12px 24px rgba(3, 155, 229, 0.64)
+  transition: all 0.3s ease-in-out 0s
+  cursor: pointer
+  outline: none
+  position: relative
+  padding: 10px
+  &::before
+    content: ''
+    border-radius: 1000px
+    min-width: calc(100% + 12px)
+    min-height: calc(100% + 12px)
+    border: 6px solid #039be5
+    box-shadow: 0 0 60px rgba(3, 155, 229, 0.64)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    opacity: 0
+    transition: all .3s ease-in-out 0s
+  &:hover, &:focus
+    color: #313133
+    transform: translateY(-6px)
+  &:hover::before, &:focus::before
+    opacity: 1
+  &::after
+    content: ''
+    width: 30px
+    height: 30px
+    border-radius: 100%
+    border: 6px solid #039be5
+    position: absolute
+    z-index: 4
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    animation: ring 1.5s infinite
+  &:hover::after, &:focus::after
+    animation: none
+    display: none
